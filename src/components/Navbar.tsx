@@ -56,6 +56,7 @@ const Navbar: React.FC = () => {
   const handleSearch = async () => {
     router.replace(`/?${createSearchParams()}`);
     setSearchTerm("");
+    setIsOpen((prev) => !prev);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
