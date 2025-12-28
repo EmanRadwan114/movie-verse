@@ -8,6 +8,8 @@ import {
   getCategoriesEndpoint,
   getSearchEndpoint,
 } from "@/services/api";
+import { Suspense } from "react";
+import MoviesSkeleton from "./ui/MoviesSkeleton";
 
 interface IProps {
   page: string;
@@ -45,10 +47,12 @@ const MovieList: React.FC<IProps> = async ({ page, query }) => {
               />
             ))}
           </div>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={query ? totalPages : 500}
-          />
+          <Suspense>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={query ? totalPages : 500}
+            />
+          </Suspense>
         </>
       ) : (
         <EmptyList message="no movies found" />

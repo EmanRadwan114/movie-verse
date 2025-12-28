@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StoreProvider from "@/app/StoreProvider";
+import { Suspense } from "react";
 
 const interSans = Inter({
   weight: ["400", "600", "800"],
@@ -28,7 +29,9 @@ export default function RootLayout({
         <ToastContainer />
         <StoreProvider>
           <div className="flex flex-col min-h-screen">
-            <Navbar />
+            <Suspense>
+              <Navbar />
+            </Suspense>
             {children}
             <Footer />
           </div>
