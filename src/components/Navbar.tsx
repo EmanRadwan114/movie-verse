@@ -42,7 +42,6 @@ const Navbar: React.FC = () => {
   // to update searchParams
   const router = useRouter();
   const searchParams = useSearchParams();
-  const pathname = usePathname();
 
   // generate url to append new search query
   const createSearchParams = useCallback(() => {
@@ -55,7 +54,7 @@ const Navbar: React.FC = () => {
 
   //———————————————————————————————— handlers ————————————————————————————————
   const handleSearch = async () => {
-    router.replace(`${pathname}?${createSearchParams()}`);
+    router.replace(`/?${createSearchParams()}`);
     setSearchTerm("");
   };
 
