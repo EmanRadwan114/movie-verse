@@ -2,7 +2,7 @@
 
 A simple and modern movies browsing app built using **Next App Router**, **TypeScript**, **Redux Toolkit**, **Tailwind CSS**, and **shadcn/ui**.
 
-MoviesHub allows users to explore movies, search for specific titles, view detailed movie information, and manage a personalized favorites list—all in a clean and responsive interface.
+MovieVerse allows users to explore movies, search for specific titles, view detailed movie information, and manage a personalized favorites list—all in a clean and responsive interface.
 
 ## 🚀 Features
 
