@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
   const handleSearch = async () => {
     router.replace(`/?${createSearchParams()}`);
     setSearchTerm("");
-    setIsOpen((prev) => !prev);
+    setIsOpen(false);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
     <header className="sticky top-0 w-full bg-secondary shadow-md border-b border-b-border z-50 text-foreground">
       <Container className="py-2">
         <nav className="flex justify-between items-center relative">
-          <Link href={"/"}>
+          <Link href={"/"} onClick={() => setIsOpen(false)}>
             <h1 className={`flex items-center ${titanOne.className}`}>
               <span className="text-2xl lg:text-3xl text-primary tracking-tighter">
                 MovieVerse
@@ -119,6 +119,7 @@ const Navbar: React.FC = () => {
               <Link
                 href={"/favorites"}
                 className="font-semibold p-2 rounded-sm hover:text-primary transition-colors duration-300 relative w-fit mx-auto text-foreground/60"
+                onClick={() => setIsOpen(false)}
               >
                 <Heart strokeWidth={1} size={30} />
                 {favorites.length ? (
